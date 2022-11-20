@@ -1,0 +1,30 @@
+name: 'Install Futhark'
+description: 'Installs the Futhark compiler'
+inputs:
+  version:
+    description: 'Version to install (or "latest")'
+    required: false
+    default: 'latest'
+runs:
+  using: "composite"
+  steps:
+    - id: fetch
+      uses: dsaltares/fetch-gh-release-asset@1.1.0
+      with:
+        repo: 'diku-dk/futhark'
+        version: ${{ ((inputs.version == 'latest') && 'latest') || format('tags/v{0}', inputs.version) }}
+        regex: true
+        file: "futhark-.*-linux-x86_64\\.tar\\.xz"
+        target: 'futhark-install-dir/'
+    - id: install
+      shell: bash
+      working-directory: 'futhark-install-dir/'
+      run: |
+        tar xvf futhark-${{steps.fetch.outputs.name}}-linux-x86_64.tar.xz
+        make -C futhark-${{steps.fetch.outputs.name}}-linux-x86_64 PREFIX=$HOME/.local install
+    - id: cleanup
+      shell: bash
+      run: rm -rf futhark-install-dir
+    - id: report
+      shell: bash
+      run: futhark --version
