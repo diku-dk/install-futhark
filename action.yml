@@ -2,7 +2,7 @@ name: 'Install Futhark'
 description: 'Installs the Futhark compiler'
 branding:
   icon: 'cloud-lightning'
-  color: '#5f021f'
+  color: 'red'
 inputs:
   version:
     description: 'Version to install (or "latest")'
