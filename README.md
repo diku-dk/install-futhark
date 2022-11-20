@@ -8,7 +8,8 @@ means it will be on the `$PATH` of a standard setup.
 
 `version`
 
-The version to install (e.g. `0.22.3`), or the string `'latest'`.
+The full version to install as a string (e.g. `'0.22.3'`), or the
+string `'latest'`.
 
 ## Example usages
 
