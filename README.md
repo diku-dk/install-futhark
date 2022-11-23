@@ -14,23 +14,23 @@ string `'latest'`, or the string `'nightly'`.
 ## Example usages
 
 ```
-      - uses: diku-dk/install-futhark@v1.0.0
+      - uses: diku-dk/install-futhark@v1.1.0
         with:
           version: '0.22.3'
 ```
 
 ```
-      - uses: diku-dk/install-futhark@v1.0.0
+      - uses: diku-dk/install-futhark@v1.1.0
 ```
 
 ```
-      - uses: diku-dk/install-futhark@v1.0.0
+      - uses: diku-dk/install-futhark@v1.1.0
         with:
           version: 'latest'
 ```
 
 ```
-      - uses: diku-dk/install-futhark@v1.0.0
+      - uses: diku-dk/install-futhark@v1.1.0
         with:
           version: 'nightly'
 ```
