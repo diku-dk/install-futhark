@@ -13,6 +13,10 @@ jobs:
           version: '0.22.3'
       - id: install-no-version
         uses: diku-dk/install-futhark@HEAD
+      - id: install-nightly
+        uses: diku-dk/install-futhark@HEAD
+        with:
+          version: 'nightly'
       - id: install-latest
         uses: diku-dk/install-futhark@HEAD
         with:

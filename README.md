@@ -9,7 +9,7 @@ means it will be on the `$PATH` of a standard setup.
 `version`
 
 The full version to install as a string (e.g. `'0.22.3'`), or the
-string `'latest'`.
+string `'latest'`, or the string `'nightly'`.
 
 ## Example usages
 
@@ -27,4 +27,10 @@ string `'latest'`.
       - uses: diku-dk/install-futhark@v1.0.0
         with:
           version: 'latest'
+```
+
+```
+      - uses: diku-dk/install-futhark@v1.0.0
+        with:
+          version: 'nightly'
 ```

@@ -15,7 +15,7 @@ runs:
       uses: dsaltares/fetch-gh-release-asset@1.1.0
       with:
         repo: 'diku-dk/futhark'
-        version: ${{ ((inputs.version == 'latest') && 'latest') || format('tags/v{0}', inputs.version) }}
+        version: ${{ ((inputs.version == 'latest') && 'latest') || ((inputs.version == 'nightly') && 'nightly') || format('tags/v{0}', inputs.version) }}
         regex: true
         file: "futhark-.*-linux-x86_64\\.tar\\.xz"
         target: 'futhark-install-dir/'
